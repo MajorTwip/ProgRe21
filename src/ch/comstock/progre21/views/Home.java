@@ -5,6 +5,8 @@ import java.util.ResourceBundle;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -20,10 +22,17 @@ public class Home extends HBox {
 		VBox menu = new VBox();
 		this.getChildren().add(menu);
 		
-		Button btn_db = new Button();
+			Button btn_db = new Button();
+			btn_db.setText(messages.getString("window.title"));
+			menu.getChildren().add(btn_db);
+			
+	
+		ImageView imgv_progre98 = new ImageView("progre98.png");
+
+		this.getChildren().add(imgv_progre98);
+	
+
 		
-		btn_db.setText(messages.getString("window.title"));
-		menu.getChildren().add(btn_db);
 	}
 	
 }
