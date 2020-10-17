@@ -6,13 +6,16 @@
 <?import javafx.scene.image.*?>
 
 
-<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.HomeController" >
+
+<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.HomeController" stylesheets="@modern.css" >
 	<children>
 		<VBox >
 			<Button fx:id="btn">Test</Button>
 		</VBox>
 		<ImageView></ImageView>
 	</children>
+
+
 
 </HBox>
 
