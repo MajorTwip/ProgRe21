@@ -16,16 +16,14 @@ public class Main extends Application {
 		try {
 			ResourceBundle bundle = ResourceBundle.getBundle("MessagesBundle");
 			
-			//System.out.println(getClass().getResource("resources/views/Home.fxml"));
 			Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("views/Menu.fxml"),bundle);
 			Parent content = FXMLLoader.load(getClass().getClassLoader().getResource("views/Home.fxml"),bundle);
 			
-			HBox root = new HBox(menu,content);
+			LoaderParent root = new LoaderParent(menu,content,bundle);
 			Scene scene = new Scene (root,800,600);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(bundle.getString("window.title"));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		primaryStage.show();

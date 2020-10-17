@@ -9,7 +9,9 @@
 
 <VBox xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="ch.comstock.progre21.MenuController"
-	stylesheets="@modern.css">
+	stylesheets="@modern.css" fx:id="mainmenu" styleClass="mainmenu">
+	
+	<Button fx:id="hamburger" styleClass="menubtn"/>
 
 	<MenuButton fx:id="btn_menu_main_ptdb" styleClass="menubtn"
 		text="%menu.main.ptdb">

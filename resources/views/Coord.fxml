@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 
 
 
-<HBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.CoordController" stylesheets="@modern.css" >
-</HBox>
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.CoordController" stylesheets="@modern.css">
+
+ 
+    <Label text="User Name:"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+ 
+    <TextField 
+        GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+ 
+    <Label text="Password:"
+        GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+ 
+    <PasswordField  
+        GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+</GridPane>
 
