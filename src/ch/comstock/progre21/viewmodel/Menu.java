@@ -1,12 +1,14 @@
-package ch.comstock.progre21;
+package ch.comstock.progre21.viewmodel;
 
+import ch.comstock.progre21.LoaderParent;
+import ch.comstock.progre21.SceneDirectory;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 
-public class MenuController {
+public class Menu {
 	@FXML
 	private VBox mainmenu;
 	@FXML
@@ -28,11 +30,11 @@ public class MenuController {
 	@FXML
 	private MenuItem btn_menu_main_measurements_arcr;
 	@FXML
-	private MenuButton btn_menu_main_artyobs;
+	private Button btn_menu_main_artyobs;
 	@FXML
-	private MenuButton btn_menu_main_calculator;
+	private Button btn_menu_main_calculator;
 	@FXML
-	private MenuButton btn_menu_main_settings;
+	private Button btn_menu_main_settings;
 
 	@FXML
 	public void initialize() {
@@ -43,9 +45,25 @@ public class MenuController {
 			}else {
 				showMenu();
 			}	
-			btn_menu_main_artyobs.hide();
 		});
-		btn_menu_main_ptdb_new.setOnAction((e)->{((LoaderParent)mainmenu.getScene().getRoot()).switchTo(SceneDirectory.PTDB_NEW);hideMenu();});
+		
+		
+		btn_menu_main_ptdb_new.setOnAction((e)->{callSwitchTo(SceneDirectory.PTDB_NEW);});
+		btn_menu_main_ptdb_list.setOnAction((e)->{callSwitchTo(SceneDirectory.PTDB_LIST);});
+		btn_menu_main_measurements_vf.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_VF);});
+		btn_menu_main_measurements_vr.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_VR);});
+		btn_menu_main_measurements_arc.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_ARC);});
+		btn_menu_main_measurements_arcr.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_ARCR);});
+		btn_menu_main_artyobs.setOnAction((e)->{callSwitchTo(SceneDirectory.ARTYOBS);});
+		btn_menu_main_calculator.setOnAction((e)->{callSwitchTo(SceneDirectory.CALC_UPN);});
+		btn_menu_main_settings.setOnAction((e)->{callSwitchTo(SceneDirectory.SETTINGS);});
+		
+		
+	}
+	
+	private void callSwitchTo(SceneDirectory scene) {
+		((LoaderParent)mainmenu.getScene().getRoot()).switchTo(scene);
+		hideMenu();
 	}
 	
 	public void showMenu() {

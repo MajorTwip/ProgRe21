@@ -8,7 +8,7 @@
 
 
 <VBox xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="ch.comstock.progre21.MenuController"
+	fx:controller="ch.comstock.progre21.viewmodel.Menu"
 	stylesheets="@modern.css" fx:id="mainmenu" styleClass="mainmenu">
 	
 	<Button fx:id="hamburger" styleClass="menubtn"/>
@@ -37,11 +37,11 @@
 		</items>
 	</MenuButton>
 
-	<MenuButton fx:id="btn_menu_main_artyobs"
+	<Button fx:id="btn_menu_main_artyobs"
 		styleClass="menubtn" text="%menu.main.artyobs" />
-	<MenuButton fx:id="btn_menu_main_calculator"
+	<Button fx:id="btn_menu_main_calculator"
 		styleClass="menubtn" text="%menu.main.calculator" />
-	<MenuButton fx:id="btn_menu_main_settings"
+	<Button fx:id="btn_menu_main_settings"
 		styleClass="menubtn" text="%menu.main.settings" />
 
 </VBox>

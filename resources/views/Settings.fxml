@@ -6,7 +6,7 @@
 
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.PTDB" stylesheets="@modern.css">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.Settings" stylesheets="@modern.css">
 
  
 
