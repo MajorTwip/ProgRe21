@@ -19,7 +19,8 @@ public class Main extends Application {
 			Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("views/Menu.fxml"),bundle);
 			Parent content = FXMLLoader.load(getClass().getClassLoader().getResource("views/Home.fxml"),bundle);
 			
-			LoaderParent root = new LoaderParent(menu,content,bundle);
+			LoaderParent root = new LoaderParent(menu,bundle);
+			root.switchTo(SceneDirectory.HOME);
 			Scene scene = new Scene (root,800,600);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(bundle.getString("window.title"));

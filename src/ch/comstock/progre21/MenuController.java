@@ -39,15 +39,23 @@ public class MenuController {
 		
 		hamburger.setOnAction((e)->{
 			if(mainmenu.getStyleClass().contains("mainmenu")) {
-				mainmenu.getStyleClass().remove("mainmenu");
-				mainmenu.getStyleClass().add("mainmenu_hidden");
+				hideMenu();
 			}else {
-				mainmenu.getStyleClass().remove("mainmenu_hidden");
-				mainmenu.getStyleClass().add("mainmenu");
+				showMenu();
 			}	
 			btn_menu_main_artyobs.hide();
 		});
-		btn_menu_main_ptdb_new.setOnAction((e)->{((LoaderParent)mainmenu.getScene().getRoot()).switchTo(SceneDirectory.PTDB_NEW);});
+		btn_menu_main_ptdb_new.setOnAction((e)->{((LoaderParent)mainmenu.getScene().getRoot()).switchTo(SceneDirectory.PTDB_NEW);hideMenu();});
+	}
+	
+	public void showMenu() {
+		mainmenu.getStyleClass().remove("mainmenu_hidden");
+		mainmenu.getStyleClass().add("mainmenu");
+	}
+	
+	public void hideMenu() {
+		mainmenu.getStyleClass().remove("mainmenu");
+		mainmenu.getStyleClass().add("mainmenu_hidden");
 	}
 
 }

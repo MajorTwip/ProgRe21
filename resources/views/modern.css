@@ -21,6 +21,14 @@
   -fx-selection-bar-non-focused: derive(-standard, 20.0%);
 }
 
+#mainparent {
+	-fx-padding: 10px;
+}
+
+.content {
+		-fx-padding: 10px;
+}
+
 .mainmenu {
 	-fx-max-width  : 300.0px;
 }
@@ -28,6 +36,10 @@
 .mainmenu_hidden {
 	-fx-max-width  : 50.0px;
 	-fx-max-height :50px;	
+}
+
+.mainmenu_hidden > .menu-button {
+	visibility: hidden;
 }
 
 .menubtn {
