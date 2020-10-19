@@ -4,17 +4,15 @@ import java.io.IOException;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 
 public class LoaderParent extends HBox {
 
 	private ResourceBundle bundle;
 
-	public LoaderParent(Parent menu, ResourceBundle bundle) {
+	public LoaderParent(@SuppressWarnings("exports") Parent menu, ResourceBundle bundle) {
 		super(menu, new Pane());
 		this.bundle = bundle;
 		this.setId("mainparent");
