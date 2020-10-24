@@ -8,7 +8,13 @@
 
 <GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_VF" stylesheets="@modern.css">
 
- 
+<ProgressBar fx:id="pb_progress" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+<Label fx:id="lb_progress" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+<Button fx:id="btn_start" GridPane.columnIndex="0" GridPane.rowIndex="2" text="Start"/>
+<Button fx:id="btn_stop" GridPane.columnIndex="0" GridPane.rowIndex="3" text="Stop"/> 
+<Button fx:id="btn_reset" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Reset"/> 
+<Label fx:id="lb_state" GridPane.columnIndex="0" GridPane.rowIndex="4" text="N/A"/>
+
 
 </GridPane>
 
