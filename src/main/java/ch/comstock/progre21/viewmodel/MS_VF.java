@@ -5,6 +5,8 @@ import ch.comstock.progre21.model.Coord;
 import ch.comstock.progre21.model.Dir;
 import ch.comstock.progre21.model.calculations.Measurement;
 import javafx.beans.Observable;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -34,6 +36,10 @@ public class MS_VF {
 	
 	protected Coord a = null;
 	protected Dir dir = null;
+	protected StringProperty result_gr = new SimpleStringProperty();
+	protected StringProperty result_kl = new SimpleStringProperty();
+	protected StringProperty result_h = new SimpleStringProperty();
+
 	
 	  
 	ChangeListener<String> getChangeListener(TextField textField){
@@ -46,12 +52,20 @@ public class MS_VF {
 		            
 		        //check if everything is filled out
 		        }else {
-		        	if(txt_input_gr.textProperty().length().lessThan(6).get()) return;
-		        	if(txt_input_kl.textProperty().length().lessThan(6).get()) return;
-		        	if(txt_input_h.textProperty().isEmpty().get()) return;
-		        	if(txt_input_azi.textProperty().length().lessThan(4).get()) return;
-		        	if(txt_input_gelwi.textProperty().length().lessThan(4).get()) return;
-		        	if(txt_input_dist.textProperty().isEmpty().get()) return;
+		        	boolean allFilled = true;
+		        	if(txt_input_gr.textProperty().length().lessThan(6).get()) allFilled=false;
+		        	if(txt_input_kl.textProperty().length().lessThan(6).get()) allFilled=false;
+		        	if(txt_input_h.textProperty().isEmpty().get()) allFilled=false;
+		        	if(txt_input_azi.textProperty().length().lessThan(4).get()) allFilled=false;
+		        	if(txt_input_gelwi.textProperty().length().lessThan(4).get()) allFilled=false;
+		        	if(txt_input_dist.textProperty().isEmpty().get()) allFilled=false;
+		        	
+		        	if(!allFilled) {
+		        		result_gr.set("");
+		        		result_kl.set("");
+		        		result_h.set("");
+		        		return;
+		        	}
 		        	
 		        	//create a Coord and a Dir
 		        	try {
@@ -65,28 +79,24 @@ public class MS_VF {
 		        		int gelwi = Integer.valueOf(txt_input_gelwi.textProperty().get());
 		        		int dist = Integer.valueOf(txt_input_dist.textProperty().get());
 
-		        		System.out.printf("Azi: %d Gelwi: %d Dist: %d",azi,gelwi,dist);
+		        		System.out.printf("Azi: %d Gelwi: %d Dist: %s\n",azi,gelwi,dist);
 
 		        		dir = new Dir(azi,gelwi,dist);
 		        		
 		        		Coord result = Measurement.vf(a, dir);
-		        		txt_result_gr.setText(String.valueOf(result.getGr()));
+		        		result_gr.set(String.valueOf(result.getGr()));
 		        		txt_result_kl.setText(String.valueOf(result.getKl()));
 		        		txt_result_h.setText(String.valueOf(result.getH()));
 
 		        		
 		        	}catch(Exception e) {
 		        		System.out.println(e.getMessage());
-		        		txt_result_gr.setText("");
-		        		txt_result_kl.setText("");
-		        		txt_result_h.setText("");
+		        		result_gr.set("");
+		        		result_kl.set("");
+		        		result_h.set("");
 		        		return;
 		        		
-		        	}
-		        	
-		        	
-		        	
-		        	System.out.println("All OK");
+		        	}	
 		        }
 			}
 		};
@@ -104,6 +114,7 @@ public class MS_VF {
 		txt_input_gelwi.textProperty().addListener(getChangeListener(txt_input_gelwi)); 
 		txt_input_dist.textProperty().addListener(getChangeListener(txt_input_dist));
 
+		txt_result_gr.textProperty().bind(result_gr);
 
 	}
 }
