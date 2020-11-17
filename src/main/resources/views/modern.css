@@ -21,6 +21,11 @@
   -fx-selection-bar-non-focused: derive(-standard, 20.0%);
 }
 
+.hbox{
+	-fx-alignment: center;
+	-fx-spacing: 20px;
+}
+
 .gridpane{
 	-fx-hgap: 10px;
 	-fx-vgap: 10px;

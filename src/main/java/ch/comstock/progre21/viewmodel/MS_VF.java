@@ -4,6 +4,7 @@ package ch.comstock.progre21.viewmodel;
 import ch.comstock.progre21.model.Coord;
 import ch.comstock.progre21.model.Dir;
 import ch.comstock.progre21.model.calculations.Measurement;
+import ch.comstock.progre21.model.drawings.Vectors;
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -11,8 +12,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 
 public class MS_VF {
+	@FXML
+	private HBox hbox;
+	
 	@FXML
 	private TextField txt_input_gr;
 	@FXML
@@ -40,7 +45,7 @@ public class MS_VF {
 	protected StringProperty result_kl = new SimpleStringProperty();
 	protected StringProperty result_h = new SimpleStringProperty();
 
-	
+	private Vectors graph = new Vectors(false);
 	  
 	ChangeListener<String> getChangeListener(TextField textField){
 		return new ChangeListener<String>() {
@@ -106,6 +111,8 @@ public class MS_VF {
 	
 	@FXML
 	private void initialize() {
+		hbox.getChildren().add(graph);
+		
 		txt_input_gr.textProperty().addListener(getChangeListener(txt_input_gr)); 
 		txt_input_kl.textProperty().addListener(getChangeListener(txt_input_kl)); 
 		txt_input_h.textProperty().addListener(getChangeListener(txt_input_h));

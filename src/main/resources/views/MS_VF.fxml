@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 
-
-
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_VF" stylesheets="@modern.css" styleClass="gridpane">
+<HBox fx:id="hbox" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_VF" stylesheets="@modern.css" styleClass="hbox">
+<GridPane styleClass="gridpane">
 
 <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%menu.main.measurements.vf" styleClass="panetitle"/>
 
@@ -34,4 +34,5 @@
 <Label GridPane.columnIndex="0" GridPane.rowIndex="12" text="%menu.main.measurements.h"/>
 <TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="12" editable="false"/>
 </GridPane>
+</HBox>
 
