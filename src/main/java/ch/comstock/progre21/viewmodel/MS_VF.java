@@ -85,8 +85,8 @@ public class MS_VF {
 		        		
 		        		Coord result = Measurement.vf(a, dir);
 		        		result_gr.set(String.valueOf(result.getGr()));
-		        		txt_result_kl.setText(String.valueOf(result.getKl()));
-		        		txt_result_h.setText(String.valueOf(result.getH()));
+		        		result_kl.set(String.valueOf(result.getKl()));
+		        		result_h.set(String.valueOf(result.getH()));
 
 		        		
 		        	}catch(Exception e) {
@@ -115,6 +115,7 @@ public class MS_VF {
 		txt_input_dist.textProperty().addListener(getChangeListener(txt_input_dist));
 
 		txt_result_gr.textProperty().bind(result_gr);
-
+		txt_result_kl.textProperty().bind(result_kl);
+		txt_result_h.textProperty().bind(result_h);
 	}
 }
