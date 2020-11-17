@@ -1,18 +1,109 @@
 package ch.comstock.progre21.viewmodel;
 
 
-import ch.comstock.progre21.model.db.DB;
+import ch.comstock.progre21.model.Coord;
+import ch.comstock.progre21.model.Dir;
+import ch.comstock.progre21.model.calculations.Measurement;
+import javafx.beans.Observable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextField;
 
 public class MS_VF {
 	@FXML
-	private ProgressBar pb_progress;
+	private TextField txt_input_gr;
+	@FXML
+	private TextField txt_input_kl;
+	@FXML
+	private TextField txt_input_h;
+	
+	@FXML
+	private TextField txt_input_azi;
+	@FXML
+	private TextField txt_input_gelwi;
+	@FXML
+	private TextField txt_input_dist;
+	
+	@FXML
+	private TextField txt_result_gr;
+	@FXML
+	private TextField txt_result_kl;
+	@FXML
+	private TextField txt_result_h;
+	
+	protected Coord a = null;
+	protected Dir dir = null;
+	
+	  
+	ChangeListener<String> getChangeListener(TextField textField){
+		return new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				//replace non-digits
+				if (!newValue.matches("\\d*")) {
+		            textField.setText(newValue.replaceAll("[^\\d]", ""));
+		            
+		        //check if everything is filled out
+		        }else {
+		        	if(txt_input_gr.textProperty().length().lessThan(6).get()) return;
+		        	if(txt_input_kl.textProperty().length().lessThan(6).get()) return;
+		        	if(txt_input_h.textProperty().isEmpty().get()) return;
+		        	if(txt_input_azi.textProperty().length().lessThan(4).get()) return;
+		        	if(txt_input_gelwi.textProperty().length().lessThan(4).get()) return;
+		        	if(txt_input_dist.textProperty().isEmpty().get()) return;
+		        	
+		        	//create a Coord and a Dir
+		        	try {
+		        		int gr = Integer.valueOf(txt_input_gr.textProperty().get());
+		        		int kl = Integer.valueOf(txt_input_kl.textProperty().get());
+		        		int h = Integer.valueOf(txt_input_h.textProperty().get());
+		        		System.out.printf("Gr: %d Kl: %d H: %d",gr,kl,h);
+		        		a = new Coord(gr,kl,h);
+		        		
+		        		int azi = Integer.valueOf(txt_input_azi.textProperty().get());
+		        		int gelwi = Integer.valueOf(txt_input_gelwi.textProperty().get());
+		        		int dist = Integer.valueOf(txt_input_dist.textProperty().get());
+
+		        		System.out.printf("Azi: %d Gelwi: %d Dist: %d",azi,gelwi,dist);
+
+		        		dir = new Dir(azi,gelwi,dist);
+		        		
+		        		Coord result = Measurement.vf(a, dir);
+		        		txt_result_gr.setText(String.valueOf(result.getGr()));
+		        		txt_result_kl.setText(String.valueOf(result.getKl()));
+		        		txt_result_h.setText(String.valueOf(result.getH()));
+
+		        		
+		        	}catch(Exception e) {
+		        		System.out.println(e.getMessage());
+		        		txt_result_gr.setText("");
+		        		txt_result_kl.setText("");
+		        		txt_result_h.setText("");
+		        		return;
+		        		
+		        	}
+		        	
+		        	
+		        	
+		        	System.out.println("All OK");
+		        }
+			}
+		};
+	}	
+	
+	
 	
 	@FXML
 	private void initialize() {
+		txt_input_gr.textProperty().addListener(getChangeListener(txt_input_gr)); 
+		txt_input_kl.textProperty().addListener(getChangeListener(txt_input_kl)); 
+		txt_input_h.textProperty().addListener(getChangeListener(txt_input_h));
 		
+		txt_input_azi.textProperty().addListener(getChangeListener(txt_input_azi)); 
+		txt_input_gelwi.textProperty().addListener(getChangeListener(txt_input_gelwi)); 
+		txt_input_dist.textProperty().addListener(getChangeListener(txt_input_dist));
 
-		DB db = new DB();
+
 	}
 }

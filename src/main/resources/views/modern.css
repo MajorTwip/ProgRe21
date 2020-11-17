@@ -21,6 +21,11 @@
   -fx-selection-bar-non-focused: derive(-standard, 20.0%);
 }
 
+.gridpane{
+	-fx-hgap: 10px;
+	-fx-vgap: 10px;
+}
+
 .content {
 	-fx-padding: 10.0px;
 }

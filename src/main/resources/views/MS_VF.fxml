@@ -6,15 +6,32 @@
 
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_VF" stylesheets="@modern.css">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_VF" stylesheets="@modern.css" styleClass="gridpane">
 
-<ProgressBar fx:id="pb_progress" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-<Label fx:id="lb_progress" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-<Button fx:id="btn_start" GridPane.columnIndex="0" GridPane.rowIndex="2" text="Start"/>
-<Button fx:id="btn_stop" GridPane.columnIndex="0" GridPane.rowIndex="3" text="Stop"/> 
-<Button fx:id="btn_reset" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Reset"/> 
-<Label fx:id="lb_state" GridPane.columnIndex="0" GridPane.rowIndex="4" text="N/A"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%menu.main.measurements.vf" styleClass="panetitle"/>
 
+<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%menu.main.measurements.a" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="%menu.main.measurements.gr"/>
+<TextField fx:id="txt_input_gr" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="%menu.main.measurements.kl"/>
+<TextField fx:id="txt_input_kl" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="%menu.main.measurements.h"/>
+<TextField fx:id="txt_input_h" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
+<Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="%menu.main.measurements.dir" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="%menu.main.measurements.azi"/>
+<TextField fx:id="txt_input_azi" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="%menu.main.measurements.gelwi"/>
+<TextField fx:id="txt_input_gelwi" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="8" text="%menu.main.measurements.dist"/>
+<TextField fx:id="txt_input_dist" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+<Label GridPane.columnIndex="0" GridPane.rowIndex="9" text="%menu.main.measurements.z" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="10" text="%menu.main.measurements.gr"/>
+<TextField fx:id="txt_result_gr" GridPane.columnIndex="1" GridPane.rowIndex="10" editable="false"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="11" text="%menu.main.measurements.kl"/>
+<TextField fx:id="txt_result_kl" GridPane.columnIndex="1" GridPane.rowIndex="11" editable="false"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="12" text="%menu.main.measurements.h"/>
+<TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="12" editable="false"/>
 </GridPane>
 
