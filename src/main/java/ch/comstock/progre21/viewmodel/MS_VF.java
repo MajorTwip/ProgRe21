@@ -1,11 +1,12 @@
 package ch.comstock.progre21.viewmodel;
 
 
+
 import ch.comstock.progre21.model.Coord;
 import ch.comstock.progre21.model.Dir;
 import ch.comstock.progre21.model.calculations.Measurement;
+import ch.comstock.progre21.model.db.DB;
 import ch.comstock.progre21.model.drawings.Vectors;
-import javafx.beans.Observable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -110,7 +111,7 @@ public class MS_VF {
 	
 	
 	@FXML
-	private void initialize() {
+	private void initialize() {		
 		hbox.getChildren().add(graph);
 		
 		txt_input_gr.textProperty().addListener(getChangeListener(txt_input_gr)); 

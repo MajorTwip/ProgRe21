@@ -1,9 +1,9 @@
 package ch.comstock.progre21.model;
 
 public class Coord {
-	private int gr;
-	private int kl;
-	private int h;
+	protected int gr;
+	protected int kl;
+	protected int h;
 	
 	public Coord(int grosseKoord, int kleineKoord, int hoehe) throws IllegalArgumentException{
 		this.gr = normalizeGr(grosseKoord);
@@ -21,6 +21,10 @@ public class Coord {
 	
 	public int getH() {
 		return h;
+	}
+	
+	public String stringify() {
+		return String.format("%s/%s/%s",this.gr,this.kl,this.h);
 	}
 	
 	private int normalizeGr(int input) {
@@ -49,6 +53,8 @@ public class Coord {
 			return input;
 		};
 		throw new IllegalArgumentException("Input must be between 0 and 7999");
-	}	
+	}
+	
+	
 
 }

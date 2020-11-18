@@ -1,46 +1,42 @@
 package ch.comstock.progre21.model.db;
 
-import java.time.LocalTime;
+import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
-import ch.comstock.progre21.model.Coord;
-import javafx.concurrent.Task;
+import ch.comstock.progre21.model.Point;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class DB {
-	private Preferences prefs;
-	
-	public DB(){
-	    prefs = Preferences.userRoot().node(this.getClass().getName());
-	    
-	    System.out.println(prefs.get("tst", "none"));
-	    prefs.put("tst", LocalTime.now().toString());
+
+
+
+	public static ObservableList<Point> getPts() {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("points");
+	    ObservableList<Point> pts = FXCollections.observableArrayList();
+	    try {
+			for(String key : prefs.keys()) {
+				try {
+					pts.add(new Point(prefs.get(key, "")));
+				}catch (IllegalArgumentException e) {
+					System.out.println("Invalid Point in DB: ");
+					System.out.println("Invalid Point in DB: ");
+				}
+			}
+		} catch (BackingStoreException e) {
+			System.out.println("PointDB not disponible on this Platform");;
+		}
+		return pts;
 	}
 	
-	
-	
-	
-	protected class GetPoint extends Task<Coord>{
-		
-		private int nr = -1;
-		
-		public void setNr(int pointNr) {
-			this.nr=pointNr;
-		}
-		
-		@Override
-		protected Coord call() throws Exception {
-			if(nr<0) throw new IllegalStateException("setNr must be called befor running");
-			updateMessage("looking Up");
-			Coord res = new Coord(2600000, 1200000, 400);
-			updateMessage("found");
-			updateMessage("finished");
-			return res;
-		}
-		
-		
+	public static void savePt(Point pt) {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("points");
+	    prefs.put(String.valueOf(pt.getNr()), pt.stringify());
 	}
-	
-	
-	
+
+	public static void delPt(int nr) {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("points");
+	    prefs.remove(String.valueOf(nr));
+	}	
 	
 }

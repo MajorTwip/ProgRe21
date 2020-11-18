@@ -6,9 +6,24 @@
 
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.PTDB" stylesheets="@modern.css">
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.PTDB" stylesheets="@modern.css" styleClass="gridpane">
+<Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%menu.main.ptdb" styleClass="panetitle"/>
 
- 
+<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%menu.main.measurements.nr"/>
+<TextField fx:id="txt_input_nr" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="%menu.main.measurements.gr"/>
+<TextField fx:id="txt_input_gr" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="%menu.main.measurements.kl"/>
+<TextField fx:id="txt_input_kl" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="%menu.main.measurements.h"/>
+<TextField fx:id="txt_input_h" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+<Button fx:id="btn_save" GridPane.columnIndex="3" GridPane.rowIndex="1" text="%menu.main.ptdb.save"/>
+<Button fx:id="btn_del" GridPane.columnIndex="3" GridPane.rowIndex="2" text="%menu.main.ptdb.del"/>
+<Button fx:id="btn_set" GridPane.columnIndex="3" GridPane.rowIndex="3" text="%menu.main.ptdb.set"/>
+
+
+<ListView fx:id="lv_points" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="4"/>
 
 </GridPane>
 

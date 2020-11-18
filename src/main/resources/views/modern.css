@@ -64,6 +64,10 @@
 	-fx-text-fill: -dark;
 }
 
+.list-cell {
+	  -fx-background-color: -standard, -bright;
+}
+
 .menu-bar {
   -fx-background-color: -standard, -bright;
   -fx-orientation: vertical; 
