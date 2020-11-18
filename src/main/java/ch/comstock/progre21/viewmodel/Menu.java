@@ -14,11 +14,7 @@ public class Menu {
 	@FXML
 	private Button hamburger;
 	@FXML
-	private MenuButton btn_menu_main_ptdb;
-	@FXML
-	private MenuItem btn_menu_main_ptdb_new;
-	@FXML
-	private MenuItem btn_menu_main_ptdb_list;
+	private Button btn_menu_main_ptdb;
 	@FXML
 	private MenuButton btn_menu_main_measurements;
 	@FXML
@@ -48,8 +44,7 @@ public class Menu {
 		});
 		
 		
-		btn_menu_main_ptdb_new.setOnAction((e)->{callSwitchTo(SceneDirectory.PTDB_NEW);});
-		btn_menu_main_ptdb_list.setOnAction((e)->{callSwitchTo(SceneDirectory.PTDB_LIST);});
+		btn_menu_main_ptdb.setOnAction((e)->{callSwitchTo(SceneDirectory.PTDB);});
 		btn_menu_main_measurements_vf.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_VF);});
 		btn_menu_main_measurements_vr.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_VR);});
 		btn_menu_main_measurements_arc.setOnAction((e)->{callSwitchTo(SceneDirectory.MS_ARC);});

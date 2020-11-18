@@ -33,6 +33,11 @@
 <TextField fx:id="txt_result_kl" GridPane.columnIndex="1" GridPane.rowIndex="11" editable="false"/>
 <Label GridPane.columnIndex="0" GridPane.rowIndex="12" text="%menu.main.measurements.h"/>
 <TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="12" editable="false"/>
+
+<Button fx:id="btn_fromdb" GridPane.columnIndex="2"
+	GridPane.rowIndex="1" text="%menu.main.measurements.fromdb" styleClass="menubtn" />
+<Button fx:id="btn_todb" GridPane.columnIndex="2"
+	GridPane.rowIndex="9" text="%menu.main.measurements.todb" styleClass="menubtn" />
 </GridPane>
 </HBox>
 

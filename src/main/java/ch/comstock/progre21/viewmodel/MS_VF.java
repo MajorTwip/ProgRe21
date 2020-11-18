@@ -2,8 +2,11 @@ package ch.comstock.progre21.viewmodel;
 
 
 
+import ch.comstock.progre21.LoaderParent;
+import ch.comstock.progre21.SceneDirectory;
 import ch.comstock.progre21.model.Coord;
 import ch.comstock.progre21.model.Dir;
+import ch.comstock.progre21.model.Point;
 import ch.comstock.progre21.model.calculations.Measurement;
 import ch.comstock.progre21.model.db.DB;
 import ch.comstock.progre21.model.drawings.Vectors;
@@ -12,6 +15,7 @@ import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
@@ -40,7 +44,14 @@ public class MS_VF {
 	@FXML
 	private TextField txt_result_h;
 	
+	
+	@FXML
+	private Button btn_fromdb;
+	@FXML
+	private Button btn_todb;
+	
 	protected Coord a = null;
+	protected Coord z = null;
 	protected Dir dir = null;
 	protected StringProperty result_gr = new SimpleStringProperty();
 	protected StringProperty result_kl = new SimpleStringProperty();
@@ -70,6 +81,7 @@ public class MS_VF {
 		        		result_gr.set("");
 		        		result_kl.set("");
 		        		result_h.set("");
+		        		btn_todb.setVisible(false);
 		        		return;
 		        	}
 		        	
@@ -89,10 +101,11 @@ public class MS_VF {
 
 		        		dir = new Dir(azi,gelwi,dist);
 		        		
-		        		Coord result = Measurement.vf(a, dir);
-		        		result_gr.set(String.valueOf(result.getGr()));
-		        		result_kl.set(String.valueOf(result.getKl()));
-		        		result_h.set(String.valueOf(result.getH()));
+		        		z = Measurement.vf(a, dir);
+		        		result_gr.set(String.valueOf(z.getGr()));
+		        		result_kl.set(String.valueOf(z.getKl()));
+		        		result_h.set(String.valueOf(z.getH()));
+		        		btn_todb.setVisible(true);
 
 		        		
 		        	}catch(Exception e) {
@@ -100,6 +113,7 @@ public class MS_VF {
 		        		result_gr.set("");
 		        		result_kl.set("");
 		        		result_h.set("");
+		        		btn_todb.setVisible(false);
 		        		return;
 		        		
 		        	}	
@@ -112,6 +126,17 @@ public class MS_VF {
 	
 	@FXML
 	private void initialize() {		
+		btn_todb.setVisible(false);
+		
+		
+		Coord pt = DB.getTransferCoord();
+		if(pt!=null) {
+			txt_input_gr.setText(String.valueOf(pt.getGr()));
+			txt_input_kl.setText(String.valueOf(pt.getKl()));
+			txt_input_h.setText(String.valueOf(pt.getH()));
+			DB.resetTransfer();
+		}
+		
 		hbox.getChildren().add(graph);
 		
 		txt_input_gr.textProperty().addListener(getChangeListener(txt_input_gr)); 
@@ -125,5 +150,15 @@ public class MS_VF {
 		txt_result_gr.textProperty().bind(result_gr);
 		txt_result_kl.textProperty().bind(result_kl);
 		txt_result_h.textProperty().bind(result_h);
+		
+		btn_fromdb.setOnAction((e)->{
+			DB.setTransferDestination(SceneDirectory.MS_VF);
+			((LoaderParent)hbox.getScene().getRoot()).switchTo(SceneDirectory.PTDB);
+		});
+		
+		btn_todb.setOnAction((e)->{
+			DB.setTransferCoord(z);
+			((LoaderParent)hbox.getScene().getRoot()).switchTo(SceneDirectory.PTDB);
+		});
 	}
 }

@@ -1,5 +1,7 @@
 package ch.comstock.progre21.viewmodel;
 
+import ch.comstock.progre21.LoaderParent;
+import ch.comstock.progre21.SceneDirectory;
 import ch.comstock.progre21.model.Coord;
 import ch.comstock.progre21.model.Point;
 import ch.comstock.progre21.model.db.DB;
@@ -12,9 +14,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 public class PTDB {
 
+	@FXML
+	private GridPane parent;
+	
 	@FXML
 	private TextField txt_input_nr;
 	@FXML
@@ -37,6 +43,31 @@ public class PTDB {
 
 	@FXML
 	private void initialize() {
+		
+		Coord pt = DB.getTransferCoord();
+		if(pt!=null) {
+			txt_input_gr.setText(String.valueOf(pt.getGr()));
+			txt_input_kl.setText(String.valueOf(pt.getKl()));
+			txt_input_h.setText(String.valueOf(pt.getH()));
+			DB.resetTransfer();
+		}
+		
+		SceneDirectory scene = DB.getTransferDestination();
+		if(scene!=null) {
+			btn_set.setVisible(true);
+			btn_set.setOnAction(e->{
+	        	if(!txt_input_nr.textProperty().isEmpty().get()) {
+					DB.setTransferCoord(new Coord(
+							Integer.valueOf(txt_input_gr.getText()), 
+							Integer.valueOf(txt_input_kl.getText()),
+							Integer.valueOf(txt_input_h.getText()))); 
+					((LoaderParent)parent.getScene().getRoot()).switchTo(scene);
+	        	}
+			});
+		}else {
+			btn_set.setVisible(false);
+		}
+		
 		pts = DB.getPts();
 		
 		txt_input_nr.textProperty().addListener(getChangeListener(txt_input_nr)); 

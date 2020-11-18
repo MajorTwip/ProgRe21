@@ -1,5 +1,8 @@
 package ch.comstock.progre21.model;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
+
 public class Coord {
 	protected int gr;
 	protected int kl;
@@ -9,6 +12,21 @@ public class Coord {
 		this.gr = normalizeGr(grosseKoord);
 		this.kl = normalizeKl(kleineKoord);
 		this.h = normalizeH(hoehe);
+	}
+	
+	public Coord(String str) throws IllegalArgumentException{
+		try {
+			String[] elems = str.split("/");
+			int grosseKoord = Integer.valueOf(elems[0]);
+			int kleineKoord = Integer.valueOf(elems[1]);
+			int hoehe = Integer.valueOf(elems[2]);
+			
+			this.gr = normalizeGr(grosseKoord);
+			this.kl = normalizeKl(kleineKoord);
+			this.h = normalizeH(hoehe);
+		}catch(Exception e) {
+			System.out.println("illegal String: " + str);
+		}
 	}
 	
 	public int getGr() {

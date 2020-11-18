@@ -2,8 +2,7 @@ package ch.comstock.progre21;
 
 public enum SceneDirectory {
 	HOME("views/Home.fxml"),
-	PTDB_NEW("views/PTDB.fxml"),
-	PTDB_LIST("views/PTDB.fxml"),
+	PTDB("views/PTDB.fxml"),
 	MS_VF("views/MS_VF.fxml"),
 	MS_VR("views/MS_VR.fxml"),
 	MS_ARC("views/MS_ARC.fxml"),

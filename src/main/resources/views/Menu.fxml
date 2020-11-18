@@ -13,15 +13,8 @@
 	
 	<Button fx:id="hamburger" styleClass="menubtn"/>
 
-	<MenuButton fx:id="btn_menu_main_ptdb" styleClass="menubtn"
-		text="%menu.main.ptdb">
-		<items>
-			<MenuItem fx:id="btn_menu_main_ptdb_new"
-				styleClass="menubtn" text="%menu.main.ptdb.new" />
-			<MenuItem fx:id="btn_menu_main_ptdb_list"
-				styleClass="menubtn" text="%menu.main.ptdb.list" />
-		</items>
-	</MenuButton>
+	<Button fx:id="btn_menu_main_ptdb" styleClass="menubtn"
+		text="%menu.main.ptdb"/>
 
 	<MenuButton fx:id="btn_menu_main_measurements"
 		styleClass="menubtn" text="%menu.main.measurements">
