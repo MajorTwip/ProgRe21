@@ -53,7 +53,7 @@ public class Coord {
 		if(input > 2400000 && input <2999999) {
 			return input;
 		}; //LV95
-		throw new IllegalArgumentException("Input must be between (2)400 000 and (2)999 999");
+		throw new IllegalArgumentException("Big Coord must be between (2)400 000 and (2)999 999");
 	}
 	
 	private int normalizeKl(int input) {
@@ -64,13 +64,13 @@ public class Coord {
 		if(input > 1000000 && input <1399999) {
 			return input;
 		}; //LV95
-		throw new IllegalArgumentException("Input must be between (1)000 000 and (1)399 999");
+		throw new IllegalArgumentException("Small Coord must be between (1)000 000 and (1)399 999");
 	}
 	private int normalizeH(int input) {
 		if(input > 0 && input <8000) {
 			return input;
 		};
-		throw new IllegalArgumentException("Input must be between 0 and 7999");
+		throw new IllegalArgumentException("Altitude must be between 0 and 7999");
 	}
 	
 	

@@ -11,11 +11,27 @@ public class Dir {
 		this.dist=normalizeDist(dist);
 	}
 	
+	
+	public Dir(String str) throws IllegalArgumentException{
+		try {
+			String[] elems = str.split("/");
+			int azi = Integer.valueOf(elems[0]);
+			int gelwi = Integer.valueOf(elems[1]);
+			int dist = Integer.valueOf(elems[2]);
+			
+			this.azi = normalizeAzi(azi);
+			this.gelwi = normalizeGelwi(gelwi);
+			this.dist = normalizeDist(dist);
+		}catch(Exception e) {
+			System.out.println("illegal String: " + str);
+		}
+	}
+	
 	private int normalizeDist(int dist) {
 		if(dist > 0) {
 			return dist;
 		};
-		throw new IllegalArgumentException("Input must be positive");
+		throw new IllegalArgumentException("Distance must be positive");
 	}
 
 	private int normalizeAzi(int azi) {
@@ -36,5 +52,9 @@ public class Dir {
 
 	public int getDist() {
 		return dist;
+	}
+	
+	public String stringify() {
+		return String.format("%s/%s/%s",this.azi,this.gelwi,this.dist);
 	}
 }

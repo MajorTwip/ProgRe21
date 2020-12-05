@@ -21,6 +21,10 @@
   -fx-selection-bar-non-focused: derive(-standard, 20.0%);
 }
 
+.alertlabel {
+	-fx-color: #34383B;
+}
+
 .hbox{
 	-fx-alignment: center;
 	-fx-spacing: 20px;

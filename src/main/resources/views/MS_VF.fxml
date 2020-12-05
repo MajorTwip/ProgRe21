@@ -38,6 +38,7 @@
 	GridPane.rowIndex="1" text="%menu.main.measurements.fromdb" styleClass="menubtn" />
 <Button fx:id="btn_todb" GridPane.columnIndex="2"
 	GridPane.rowIndex="9" text="%menu.main.measurements.todb" styleClass="menubtn" />
+<Label fx:id="lbl_alert" GridPane.columnIndex="0" GridPane.rowIndex="13" GridPane.columnSpan="2"  text="" styleClass="alertlabel"/>
 </GridPane>
 </HBox>
 

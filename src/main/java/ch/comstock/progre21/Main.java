@@ -12,16 +12,15 @@ public class Main extends Application {
 	@Override
 	public void start(@SuppressWarnings("exports") Stage primaryStage) {
 		try {
-			
-			//Parent menu1 = FXMLLoader.load(getClass().getClassLoader().getResource("views/Menu.fxml"));
-			//System.out.println(menu1.toString());
 			ResourceBundle bundle = ResourceBundle.getBundle("MessagesBundle");
 			
 			Parent menu = FXMLLoader.load(getClass().getClassLoader().getResource("views/Menu.fxml"),bundle);
 			
 			LoaderParent root = new LoaderParent(menu,bundle);
 			root.switchTo(SceneDirectory.HOME);
-			Scene scene = new Scene (root,800,600);
+			Scene scene = new Scene (root,900,700);
+			primaryStage.setMinWidth(900);
+			primaryStage.setMinHeight(700);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(bundle.getString("window.title"));
 		} catch (Exception e) {

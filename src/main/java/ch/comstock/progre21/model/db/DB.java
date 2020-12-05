@@ -45,6 +45,16 @@ public class DB {
 	    prefs.remove(String.valueOf(nr));
 	}	
 	
+	public static void setKey(String name, String val) {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("tmp");
+	    prefs.put(name, val);
+	}
+	
+	public static String getKey(String name) {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("tmp");
+	    return prefs.get(name, "");
+	}
+	
 	public static void setTransferCoord(Coord coord) {
 	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("nav");
 	    prefs.put(transferCoord, coord.stringify());
