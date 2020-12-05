@@ -22,7 +22,7 @@
 }
 
 .alertlabel {
-	-fx-color: #34383B;
+	-fx-text-inner-color: #34383B;
 }
 
 .hbox{

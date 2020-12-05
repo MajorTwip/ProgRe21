@@ -90,8 +90,7 @@ public class MS_VF {
 			        		a = new Coord(gr,kl,h);
 			        		System.out.println(a.stringify());
 		        	  	}catch(Exception e) {
-			        		System.out.println(e.getMessage());
-			        		showAlert(e.getMessage());
+			        		showAlert(e.getLocalizedMessage());
 			        		a=null;
 			        	}	
 		        	}else {
@@ -112,8 +111,7 @@ public class MS_VF {
 			        		dir = new Dir(azi,gelwi,dist);
 			        		System.out.println(dir.stringify());
 			        	}catch(Exception e) {
-			        		System.out.println(e.getMessage());
-			        		showAlert(e.getMessage());
+			        		showAlert(e.getLocalizedMessage());
 			        		dir=null;
 			        	}	
 		        	}else {
@@ -196,6 +194,7 @@ public class MS_VF {
 	}
 	
 	private void showAlert(String msg) {
+		System.out.println("Alert: " + msg);
 		lbl_alert.setText(msg);
 		lbl_alert.setVisible(true);
 	}

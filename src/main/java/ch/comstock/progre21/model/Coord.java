@@ -3,6 +3,8 @@ package ch.comstock.progre21.model;
 import java.net.URLDecoder;
 import java.nio.charset.Charset;
 
+import ch.comstock.progre21.exceptions.IllegalValueException;
+
 public class Coord {
 	protected int gr;
 	protected int kl;
@@ -53,7 +55,7 @@ public class Coord {
 		if(input > 2400000 && input <2999999) {
 			return input;
 		}; //LV95
-		throw new IllegalArgumentException("Big Coord must be between (2)400 000 and (2)999 999");
+		throw new IllegalValueException("Big Coord must be between (2)400 000 and (2)999 999", "e.coord.gr.oob");
 	}
 	
 	private int normalizeKl(int input) {
