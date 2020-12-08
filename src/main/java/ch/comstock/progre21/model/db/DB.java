@@ -92,6 +92,20 @@ public class DB {
 	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("nav");
 	    prefs.remove(transferCoord);
 	    prefs.remove(transferDest);
+	}
+
+	public static void clear() {
+	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky");
+	    System.out.println("clearing");
+		try {
+			prefs.node("points").clear();
+			prefs.node("nav").clear();
+			prefs.node("tmp").clear();
+			prefs.clear();
+			System.out.println("all clear");
+		} catch (BackingStoreException e) {
+			System.out.println("PointDB not disponible on this Platform");;
+		}
 	}	
 	
 }

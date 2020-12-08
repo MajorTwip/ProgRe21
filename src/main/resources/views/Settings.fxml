@@ -6,9 +6,23 @@
 
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.Settings" stylesheets="@modern.css">
+<GridPane fx:id="parent" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="ch.comstock.progre21.viewmodel.Settings"
+	stylesheets="@modern.css">
 
- 
-
+	<Button fx:id="btn_cleardb" GridPane.columnIndex="1"
+		GridPane.rowIndex="1" text="%settings.cleardb"
+		styleClass="menubtn" />
+		
+<RadioButton fx:id="rb_ger" GridPane.columnIndex="1" GridPane.rowIndex="2" text="Deutsch">
+   <toggleGroup>
+       <ToggleGroup fx:id="lang_group"/>
+   </toggleGroup>
+</RadioButton>
+<RadioButton fx:id="rb_fra" GridPane.columnIndex="1" GridPane.rowIndex="3" text="Francais">
+   <toggleGroup>
+       <fx:reference source="lang_group"/>
+   </toggleGroup>
+</RadioButton>
 </GridPane>
 

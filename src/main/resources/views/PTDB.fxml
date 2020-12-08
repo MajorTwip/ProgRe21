@@ -25,29 +25,29 @@
 			text="%menu.main.ptdb" styleClass="panetitle" />
 
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="1"
-			text="%menu.main.measurements.nr" />
+			text="%ptdb.nr" />
 		<TextField fx:id="txt_input_nr" GridPane.columnIndex="1"
 			GridPane.rowIndex="1" />
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="2"
-			text="%menu.main.measurements.gr" />
+			text="%measurements.gr" />
 		<TextField fx:id="txt_input_gr" GridPane.columnIndex="1"
 			GridPane.rowIndex="2" />
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="3"
-			text="%menu.main.measurements.kl" />
+			text="%measurements.kl" />
 		<TextField fx:id="txt_input_kl" GridPane.columnIndex="1"
 			GridPane.rowIndex="3" />
 		<Label GridPane.columnIndex="0" GridPane.rowIndex="4"
-			text="%menu.main.measurements.h" />
+			text="%measurements.h" />
 		<TextField fx:id="txt_input_h" GridPane.columnIndex="1"
 			GridPane.rowIndex="4" />
 
 		<Button fx:id="btn_save" GridPane.columnIndex="3"
-			GridPane.rowIndex="1" text="%menu.main.ptdb.save"
+			GridPane.rowIndex="1" text="%ptdb.save"
 			styleClass="menubtn" />
 		<Button fx:id="btn_del" GridPane.columnIndex="3"
-			GridPane.rowIndex="2" text="%menu.main.ptdb.del" styleClass="menubtn" />
+			GridPane.rowIndex="2" text="%ptdb.del" styleClass="menubtn" />
 		<Button fx:id="btn_set" GridPane.columnIndex="3"
-			GridPane.rowIndex="3" text="%menu.main.ptdb.set" styleClass="menubtn" />
+			GridPane.rowIndex="3" text="%ptdb.set" styleClass="menubtn" />
 
 
 

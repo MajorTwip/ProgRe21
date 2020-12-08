@@ -22,7 +22,8 @@
 }
 
 .alertlabel {
-	-fx-text-inner-color: #34383B;
+	-fx-background-color: #DF5B5B;
+	-fx-padding: 5px;	
 }
 
 .hbox{
@@ -181,6 +182,10 @@
   -fx-background-color : -bright;
   -fx-background-insets: 0.0;
   -fx-padding          : 0.4em;
+}
+
+.radio-button  {
+	-fx-text-fill: -dark;
 }
 
 .check-box > .box {

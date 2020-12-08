@@ -10,34 +10,34 @@
 
 <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%menu.main.measurements.vf" styleClass="panetitle"/>
 
-<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%menu.main.measurements.a" styleClass="grouptitle"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="%menu.main.measurements.gr"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%measurements.a" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="%measurements.gr"/>
 <TextField fx:id="txt_input_gr" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="%menu.main.measurements.kl"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="%measurements.kl"/>
 <TextField fx:id="txt_input_kl" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="%menu.main.measurements.h"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="%measurements.h"/>
 <TextField fx:id="txt_input_h" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
 
-<Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="%menu.main.measurements.dir" styleClass="grouptitle"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="%menu.main.measurements.azi"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="%measurements.dir" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="%measurements.azi"/>
 <TextField fx:id="txt_input_azi" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="%menu.main.measurements.gelwi"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="%measurements.gelwi"/>
 <TextField fx:id="txt_input_gelwi" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="8" text="%menu.main.measurements.dist"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="8" text="%measurements.dist"/>
 <TextField fx:id="txt_input_dist" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
 
-<Label GridPane.columnIndex="0" GridPane.rowIndex="9" text="%menu.main.measurements.z" styleClass="grouptitle"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="10" text="%menu.main.measurements.gr"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="9" text="%measurements.z" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="10" text="%measurements.gr"/>
 <TextField fx:id="txt_result_gr" GridPane.columnIndex="1" GridPane.rowIndex="10" editable="false"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="11" text="%menu.main.measurements.kl"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="11" text="%measurements.kl"/>
 <TextField fx:id="txt_result_kl" GridPane.columnIndex="1" GridPane.rowIndex="11" editable="false"/>
-<Label GridPane.columnIndex="0" GridPane.rowIndex="12" text="%menu.main.measurements.h"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="12" text="%measurements.h"/>
 <TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="12" editable="false"/>
 
 <Button fx:id="btn_fromdb" GridPane.columnIndex="2"
-	GridPane.rowIndex="1" text="%menu.main.measurements.fromdb" styleClass="menubtn" />
+	GridPane.rowIndex="1" text="%measurements.fromdb" styleClass="menubtn" />
 <Button fx:id="btn_todb" GridPane.columnIndex="2"
-	GridPane.rowIndex="9" text="%menu.main.measurements.todb" styleClass="menubtn" />
+	GridPane.rowIndex="9" text="%measurements.todb" styleClass="menubtn" />
 <Label fx:id="lbl_alert" GridPane.columnIndex="0" GridPane.rowIndex="13" GridPane.columnSpan="2"  text="" styleClass="alertlabel"/>
 </GridPane>
 </HBox>
