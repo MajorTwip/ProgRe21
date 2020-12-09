@@ -34,4 +34,15 @@ public class Measurement {
 			throw new IllegalArgumentException(String.format("Calculation leads to an illegal result: %d/%d/%d",gr,kl,h));
 		}
 	}
+
+	public static Coord vr(Coord z, Dir dir) throws IllegalArgumentException{
+		// do vf but inversed
+		Dir dirinv = new Dir(3200+dir.getAzi(),-dir.getGelwi(),dir.getDist());
+		return vf(z,dirinv);
+	}
+
+	public static Coord arc(Coord l, int dl, Coord r, int dr) throws IllegalArgumentException{
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

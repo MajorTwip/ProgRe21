@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 
+<HBox fx:id="hbox" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_ARC" stylesheets="@modern.css" styleClass="hbox">
+<GridPane styleClass="gridpane">
+
+<Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%menu.main.measurements.arc" styleClass="panetitle"/>
+
+<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%measurements.ptl" styleClass="grouptitle"/>
+<TextField fx:id="txt_input_lgr" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+<TextField fx:id="txt_input_lkl" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+<TextField fx:id="txt_input_lh" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+<TextField fx:id="txt_input_ld" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+<Button fx:id="btn_lfromdb" GridPane.columnIndex="0"
+	GridPane.rowIndex="6" text="%measurements.fromdb" styleClass="menubtn" />
+
+<Label GridPane.columnIndex="1" GridPane.rowIndex="2" text="%measurements.gr"/>
+<Label GridPane.columnIndex="1" GridPane.rowIndex="3" text="%measurements.kl"/>
+<Label GridPane.columnIndex="1" GridPane.rowIndex="4" text="%measurements.h"/>
+<Label GridPane.columnIndex="1" GridPane.rowIndex="5" text="%measurements.dist"/>
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.MS_ARC" stylesheets="@modern.css">
+<Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="%measurements.ptr" styleClass="grouptitle"/>
+<TextField fx:id="txt_input_rgr" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+<TextField fx:id="txt_input_rkl" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+<TextField fx:id="txt_input_rh" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+<TextField fx:id="txt_input_rd" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+<Button fx:id="btn_rfromdb" GridPane.columnIndex="2"
+	GridPane.rowIndex="6" text="%measurements.fromdb" styleClass="menubtn" />
 
- 
+<Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="%measurements.z" styleClass="grouptitle"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="8" text="%measurements.gr"/>
+<TextField fx:id="txt_result_gr" GridPane.columnIndex="1" GridPane.rowIndex="8" editable="false"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="9" text="%measurements.kl"/>
+<TextField fx:id="txt_result_kl" GridPane.columnIndex="1" GridPane.rowIndex="9" editable="false"/>
+<Label GridPane.columnIndex="0" GridPane.rowIndex="10" text="%measurements.h"/>
+<TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="10" editable="false"/>
 
+<Button fx:id="btn_todb" GridPane.columnIndex="2"
+	GridPane.rowIndex="7" text="%measurements.todb" styleClass="menubtn" />
+<Label fx:id="lbl_alert" GridPane.columnIndex="0" GridPane.rowIndex="11" GridPane.columnSpan="2"  text="" styleClass="alertlabel"/>
 </GridPane>
+</HBox>
 
