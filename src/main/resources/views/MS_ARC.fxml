@@ -40,7 +40,7 @@
 <Label GridPane.columnIndex="0" GridPane.rowIndex="10" text="%measurements.h"/>
 <TextField fx:id="txt_result_h" GridPane.columnIndex="1" GridPane.rowIndex="10" editable="false"/>
 
-<Button fx:id="btn_todb" GridPane.columnIndex="2"
+<Button fx:id="btn_todb" GridPane.columnIndex="1"
 	GridPane.rowIndex="7" text="%measurements.todb" styleClass="menubtn" />
 <Label fx:id="lbl_alert" GridPane.columnIndex="0" GridPane.rowIndex="11" GridPane.columnSpan="2"  text="" styleClass="alertlabel"/>
 </GridPane>

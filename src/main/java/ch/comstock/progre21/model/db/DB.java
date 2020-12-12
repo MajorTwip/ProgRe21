@@ -47,12 +47,15 @@ public class DB {
 	
 	public static void setKey(String name, String val) {
 	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("tmp");
+	    System.out.println("save '" +val+ "' to '" +name+ "'");
 	    prefs.put(name, val);
 	}
 	
 	public static String getKey(String name) {
 	    Preferences prefs = Preferences.userRoot().node("ch.ffhs.gui.vky").node("tmp");
-	    return prefs.get(name, "");
+	    String res = prefs.get(name, "");
+	    System.out.println("got '" +res+ "' from '" +name+ "'");
+	    return res;
 	}
 	
 	public static void setTransferCoord(Coord coord) {

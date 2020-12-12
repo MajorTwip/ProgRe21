@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 
 
 
-<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.comstock.progre21.viewmodel.CALC_UPN" stylesheets="@modern.css">
-
- 
-
-</GridPane>
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+	stylesheets="@modern.css">
+	<children>
+		<Label text="%menu.main.calculator" styleClass="menutitle" />
+		<Label text="%changemgmt.removed" styleClass="subtitle" />
+		<ImageView>
+			<image>
+				<Image url="@../images/origmenu.png" />
+			</image>
+		</ImageView>
+	</children>
+</VBox>
 

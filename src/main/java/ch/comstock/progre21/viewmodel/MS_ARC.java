@@ -143,11 +143,20 @@ public class MS_ARC {
 		        	
 			        
 		        	if(l!=null&&r!=null&&dl>0&&dr>0) {
+		        		try {
 		        		z = Measurement.arc(l,dl,r,dr);
 		        		result_gr.set(String.valueOf(z.getGr()));
 		        		result_kl.set(String.valueOf(z.getKl()));
 		        		result_h.set(String.valueOf(z.getH()));
 		        		btn_todb.setVisible(true);
+		        		hideAlert();
+		        		}catch(Exception e){
+		        			result_gr.set("");
+			        		result_kl.set("");
+			        		result_h.set("");
+			        		btn_todb.setVisible(false);	
+			        		showAlert(e.getLocalizedMessage());
+		        		}
 		        	}else {
 		        		result_gr.set("");
 		        		result_kl.set("");
@@ -168,14 +177,14 @@ public class MS_ARC {
 		Coord pt = DB.getTransferCoord();
 		if(pt!=null) {
 			String target = DB.getKey(dirkeynameptdb);
-			if(target=="l") {
+			if(target.equals("l")) {
 				txt_input_lgr.setText(String.valueOf(pt.getGr()));
 				txt_input_lkl.setText(String.valueOf(pt.getKl()));
 				txt_input_lh.setText(String.valueOf(pt.getH()));
 				DB.setKey(dirkeynameptl, "");
 			}
 
-			if(target=="r") {
+			if(target.equals("r")) {
 				txt_input_rgr.setText(String.valueOf(pt.getGr()));
 				txt_input_rkl.setText(String.valueOf(pt.getKl()));
 				txt_input_rh.setText(String.valueOf(pt.getH()));
